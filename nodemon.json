@@ -1,0 +1,5 @@
+{
+  "watch": ["server/src", "server/config", "server/prisma"],
+  "ext": "ts,prisma",
+  "exec": "tsx server/config/server.ts"
+}
