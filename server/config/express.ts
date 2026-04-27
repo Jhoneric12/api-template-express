@@ -4,6 +4,7 @@ import { errorHandler } from "../src/middlewares/error-handler.js";
 import { env } from "./env.js";
 import helmet from "helmet";
 import cors from "cors";
+import { APIError } from "../src/utils/app-error.js";
 
 const app = express();
 
@@ -19,9 +20,11 @@ if (env.NODE_ENV !== "production") {
   });
 }
 
+const allowedOrigins = ["https://yourdomain.com"];
+
 // CORS Configuration
 const corsOptions = {
-  origin: env.NODE_ENV === "production" ? ["https://yourdomain.com"] : true,
+  origin: env.NODE_ENV === "production" ? allowedOrigins : true,
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
   credentials: true,
 };
@@ -52,10 +55,16 @@ app.use(
   }),
 );
 
+app.set("json spaces", 2);
+app.set("case sensitive routing", false);
+app.set("strict routing", true);
+app.set("x-powered-by", false);
+
 app.use("/api", routes);
 
-app.use((req, res) => {
-  res.status(404).json({ message: "Not found" });
+// 404 handler
+app.use((req, res, next) => {
+  next(new APIError("API not found", 404));
 });
 
 app.use(errorHandler);
