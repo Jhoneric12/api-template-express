@@ -1,4 +1,4 @@
-import { healthRepository } from "../repositories/health.repository.js";
+import { healthRepository } from "../repositories/v1/health.repository.js";
 
 export const healthService = {
   async getHealth() {
