@@ -32,12 +32,20 @@ cp .env.example .env
 PORT=3000
 NODE_ENV=development
 DATABASE_URL="mysql://USER:PASSWORD@HOST:3306/DATABASE_NAME"
+
+# Optional (only if you use split DB settings in custom code)
+DATABASE_USER=
+DATABASE_PASSWORD=
+DATABASE_NAME=
+DATABASE_HOST=
 ```
 
-Notes:
+Environment variable rules:
 
-- `DATABASE_URL` is required for Prisma database connection.
-- Default API port is `3000` if `PORT` is not set.
+- Required: `DATABASE_URL` (used by Prisma via `prisma.config.ts`)
+- Optional: `PORT` (defaults to `3000`)
+- Optional: `NODE_ENV` (defaults to `development`)
+- Optional: `DATABASE_USER`, `DATABASE_PASSWORD`, `DATABASE_NAME`, `DATABASE_HOST` (available in env config, not required by Prisma setup)
 
 4. Generate Prisma client:
 
