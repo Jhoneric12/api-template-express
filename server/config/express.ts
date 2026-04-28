@@ -11,6 +11,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const allowedOrigins = ["https://yourdomain.com"];
+
 if (env.NODE_ENV !== "production") {
   app.use((req, _res, next) => {
     // Minimal request logger for local dev.
@@ -19,8 +21,6 @@ if (env.NODE_ENV !== "production") {
     next();
   });
 }
-
-const allowedOrigins = ["https://yourdomain.com"];
 
 // CORS Configuration
 const corsOptions = {

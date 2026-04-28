@@ -9,7 +9,8 @@
     "start": "node server/dist/config/server.js",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "tsx server/src/scripts/scaffolding.ts"
   },
   "keywords": [],
   "author": "JHON ERIC D. ATON",
