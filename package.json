@@ -19,6 +19,7 @@
   "dependencies": {
     "@prisma/adapter-mariadb": "^7.8.0",
     "@prisma/client": "^7.8.0",
+    "@prisma/config": "^7.8.0",
     "cors": "^2.8.6",
     "debug": "^4.4.3",
     "dotenv": "^16.4.5",
@@ -28,13 +29,12 @@
     "tsx": "^4.21.0"
   },
   "devDependencies": {
-    "@prisma/config": "^7.8.0",
     "@types/cors": "^2.8.19",
     "@types/debug": "^4.1.13",
     "@types/express": "^4.17.25",
     "@types/node": "^20.14.9",
     "nodemon": "^3.1.14",
-    "prisma": "^6.19.3",
+    "prisma": "^7.8.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }

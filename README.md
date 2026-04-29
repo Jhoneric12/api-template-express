@@ -1,4 +1,4 @@
-# API Template
+# API Template Express
 
 Express + TypeScript + Prisma (MySQL) starter API.
 
