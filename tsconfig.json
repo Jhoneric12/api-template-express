@@ -13,6 +13,6 @@
     "ignoreDeprecations": "6.0",
     "types": ["node"]
   },
-  "include": ["src/**/*.ts", "config/**/*.ts", "prisma/**/*.ts", "prisma.config.ts"],
+  "include": ["server/**/*.ts", "prisma/**/*.ts", "prisma.config.ts"],
   "exclude": ["node_modules", "dist"]
 }
